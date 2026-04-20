@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
+  <title>PrimeRoute Marketing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PrimeRoute Test</title>
 </head>
-<body style="font-family: Arial, sans-serif; padding: 30px; background: white; color: black;">
-  <h1>PrimeRoute Marketing</h1>
-  <p>If you can see this, your live page is working.</p>
-  <p>Next step is adding the form back.</p>
+<body style="font-family: Arial; text-align: center; padding: 30px;">
+
+<h1>PrimeRoute Marketing</h1>
+<p>We help businesses get more customers.</p>
+
+<h2>Get Leads</h2>
+
+<input id="name" placeholder="Your Name" style="padding:10px;width:80%;margin:10px;"><br>
+<input id="business" placeholder="Business Type" style="padding:10px;width:80%;margin:10px;"><br>
+<input id="phone" placeholder="Phone Number" style="padding:10px;width:80%;margin:10px;"><br>
+
+<button onclick="sendLead()" style="padding:15px;width:80%;background:black;color:gold;border:none;">
+Message on WhatsApp
+</button>
+
+<script>
+function sendLead() {
+  var name = document.getElementById("name").value;
+  var business = document.getElementById("business").value;
+  var phone = document.getElementById("phone").value;
+
+  var message = "New Lead:%0AName: " + name + "%0ABusiness: " + business + "%0APhone: " + phone;
+
+  var url = "https://wa.me/17039459082?text=" + message;
+
+  window.location.href = url;
+}
+</script>
+
 </body>
 </html>
