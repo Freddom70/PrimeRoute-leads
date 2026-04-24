@@ -4,279 +4,161 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PrimeRoute Marketing</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
 
+  <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #050505 0%, #111111 100%);
-      color: #ffffff;
+      background: linear-gradient(180deg, #050505, #111);
+      color: #fff;
       text-align: center;
-      padding: 24px 16px 50px;
+      padding: 20px;
     }
 
     .container {
-      max-width: 560px;
-      margin: 0 auto;
-      background: rgba(18, 18, 18, 0.96);
-      border: 1px solid rgba(212, 175, 55, 0.25);
-      border-radius: 22px;
-      padding: 28px 20px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(4px);
-    }
-
-    .gold-line {
-      width: 72px;
-      height: 3px;
-      background: linear-gradient(90deg, #8c6a16, #d4af37, #f4df95);
-      margin: 0 auto 18px;
-      border-radius: 999px;
+      max-width: 600px;
+      margin: auto;
+      background: #121212;
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: 20px;
+      padding: 25px;
     }
 
     h1 {
-      margin: 0;
-      font-size: 34px;
-      line-height: 1.1;
       color: #d4af37;
-      letter-spacing: 0.5px;
+      font-size: 32px;
+      margin-bottom: 10px;
     }
 
-    .subheadline {
-      margin: 12px 0 22px;
-      color: #e6e6e6;
-      font-size: 16px;
-      line-height: 1.5;
+    .sub {
+      color: #ddd;
+      margin-bottom: 20px;
     }
 
-    .hero-box {
-      background: linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
-      border: 1px solid rgba(212, 175, 55, 0.18);
-      border-radius: 18px;
-      padding: 18px 16px;
-      margin-bottom: 22px;
+    .box {
+      background: #1a1a1a;
+      border: 1px solid rgba(212,175,55,0.15);
+      border-radius: 15px;
+      padding: 15px;
+      margin-bottom: 20px;
     }
 
-    .hero-box h2 {
-      margin: 0 0 8px;
-      font-size: 24px;
-      color: #ffffff;
+    .samples {
+      text-align: left;
     }
 
-    .hero-box p {
-      margin: 0;
-      color: #d9d9d9;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    .badge-row {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin: 16px 0 22px;
-    }
-
-    .badge {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: #191919;
-      border: 1px solid rgba(212, 175, 55, 0.18);
-      color: #f2f2f2;
-      font-size: 13px;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 14px 14px;
-      margin-top: 12px;
+    .sample-card {
+      border: 1px solid rgba(212,175,55,0.15);
       border-radius: 12px;
-      border: 1px solid #2f2f2f;
+      padding: 12px;
+      margin-bottom: 10px;
+      background: #161616;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 10px;
+      border: 1px solid #333;
       background: #0f0f0f;
-      color: #ffffff;
-      font-size: 16px;
-      outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: rgba(212, 175, 55, 0.85);
-      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
-      transform: translateY(-1px);
-    }
-
-    textarea {
-      min-height: 110px;
-      resize: vertical;
+      color: white;
     }
 
     button {
       width: 100%;
-      margin-top: 16px;
-      padding: 15px;
+      padding: 14px;
+      margin-top: 15px;
+      background: #d4af37;
+      color: black;
       border: none;
-      border-radius: 12px;
-      background: linear-gradient(90deg, #b48920, #d4af37, #f0d67a);
-      color: #111111;
-      font-size: 16px;
+      border-radius: 10px;
       font-weight: bold;
       cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-      box-shadow: 0 10px 24px rgba(212, 175, 55, 0.18);
-    }
-
-    button:hover {
-      transform: translateY(-2px) scale(1.01);
-      opacity: 0.98;
     }
 
     .trust {
-      margin-top: 18px;
+      margin-top: 15px;
       font-size: 13px;
-      color: #bdbdbd;
-      line-height: 1.5;
-    }
-
-    .footer-note {
-      margin-top: 14px;
-      font-size: 12px;
-      color: #888888;
-    }
-
-    .fade-up {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s ease forwards;
-    }
-
-    .delay-1 { animation-delay: 0.15s; }
-    .delay-2 { animation-delay: 0.3s; }
-    .delay-3 { animation-delay: 0.45s; }
-    .delay-4 { animation-delay: 0.6s; }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 30px;
-      }
-
-      .hero-box h2 {
-        font-size: 22px;
-      }
-
-      .container {
-        padding: 24px 16px;
-      }
+      color: #aaa;
     }
   </style>
 </head>
+
 <body>
   <div class="container">
-    <div class="gold-line fade-up"></div>
 
-    <h1 class="fade-up delay-1">PrimeRoute Marketing</h1>
-
-    <p class="subheadline fade-up delay-1">
-      Premium direct mail campaigns designed to help contractors and local service businesses generate real leads.
+    <h1>Get More Roofing Jobs</h1>
+    <p class="sub">
+      We help roofing companies generate more calls using targeted direct mail campaigns.
     </p>
 
-    <div class="hero-box fade-up delay-2">
-      <h2>More Calls. Better Leads. Stronger First Impression.</h2>
+    <div class="box">
+      <h2>More Calls. Better Leads.</h2>
       <p>
-        We help you stand out with high-end postcard marketing, sharper offers, and targeted local reach.
+        Target the right neighborhoods with offers that get homeowners to call.
       </p>
     </div>
 
-    <div class="badge-row fade-up delay-2">
-      <div class="badge">Luxury Design</div>
-      <div class="badge">Targeted Routes</div>
-      <div class="badge">Built for Contractors</div>
+    <div class="samples">
+      <h3 style="color:#d4af37; text-align:center;">
+        Campaigns We Can Launch For You This Week
+      </h3>
+
+      <div class="sample-card">
+        <strong>Roofing Campaign</strong>
+        <p>Free roof inspection + storm damage check</p>
+      </div>
+
+      <div class="sample-card">
+        <strong>Insurance Claim Help</strong>
+        <p>We help homeowners get approved and covered</p>
+      </div>
+
+      <div class="sample-card">
+        <strong>Neighborhood Targeting</strong>
+        <p>Hit areas with recent storm activity</p>
+      </div>
     </div>
- <div class="samples fade-up delay-3">
-  <h3>Sample Campaign Ideas</h3>
 
-  <div class="sample-card">
-    <h4>Roofing Campaign</h4>
-    <p><strong>Offer:</strong> Free roof inspection + storm damage check</p>
-    <p><strong>Angle:</strong> Help homeowners catch damage early and avoid bigger repairs.</p>
-  </div>
+    <div class="box">
+      <h2>Ready To Get More Calls?</h2>
+      <p>
+        Tell us your service area and we’ll map out a campaign for your business.
+      </p>
+    </div>
 
-  <div class="sample-card">
-    <h4>HVAC Campaign</h4>
-    <p><strong>Offer:</strong> Seasonal tune-up special</p>
-    <p><strong>Angle:</strong> Stay ahead of breakdowns before peak hot or cold weather hits.</p>
-  </div>
+    <form onsubmit="sendLead(event)">
+      <input id="name" placeholder="Your Name" required>
+      <input id="business" placeholder="Business Name" required>
+      <input id="phone" placeholder="Phone Number" required>
 
-  <div class="sample-card">
-    <h4>Plumbing Campaign</h4>
-    <p><strong>Offer:</strong> Drain clearing or leak inspection promo</p>
-    <p><strong>Angle:</strong> Fast local response for homeowners who need help now.</p>
-  </div>
-</div>
-    <form id="leadForm" class="fade-up delay-3">
-      <input type="text" id="name" placeholder="Your Name" required />
-      <input type="text" id="business" placeholder="Business Name / Service Type" required />
-      <input type="tel" id="phone" placeholder="Phone Number" required />
-      <input type="text" id="serviceArea" placeholder="Service Area" />
-      
-      <select id="interest">
-        <option value="EDDM Campaign">EDDM Campaign</option>
-        <option value="Luxury Postcard Design">Luxury Postcard Design</option>
-        <option value="Mailing Routes">Mailing Routes</option>
-        <option value="Full Lead Package">Full Lead Package</option>
-      </select>
-
-      <textarea id="notes" placeholder="Tell us what kind of customers you want more of"></textarea>
-
-      <button type="submit">Message Us on WhatsApp</button>
+      <button type="submit">Get My Leads Now</button>
     </form>
 
-    <div class="trust fade-up delay-4">
-      Fast setup. Premium presentation. Built to help you win more local business.
+    <div class="trust">
+      Built for roofing companies • Fast setup • No contracts
     </div>
 
-    <div class="footer-note fade-up delay-4">
-      PrimeRoute Marketing • Direct Mail That Looks High Value
-    </div>
   </div>
 
   <script>
-    document.getElementById("leadForm").addEventListener("submit", function(e) {
+    function sendLead(e) {
       e.preventDefault();
 
-      var name = document.getElementById("name").value.trim();
-      var business = document.getElementById("business").value.trim();
-      var phone = document.getElementById("phone").value.trim();
-      var serviceArea = document.getElementById("serviceArea").value.trim();
-      var interest = document.getElementById("interest").value;
-      var notes = document.getElementById("notes").value.trim();
+      var name = document.getElementById("name").value;
+      var business = document.getElementById("business").value;
+      var phone = document.getElementById("phone").value;
 
-      var message =
-        "New PrimeRoute Lead%0A%0A" +
-        "Name: " + name + "%0A" +
-        "Business: " + business + "%0A" +
-        "Phone: " + phone + "%0A" +
-        "Service Area: " + serviceArea + "%0A" +
-        "Interested In: " + interest + "%0A" +
-        "Notes: " + notes;
+      var message = "New Lead:%0AName: " + name +
+                    "%0ABusiness: " + business +
+                    "%0APhone: " + phone;
 
       var url = "https://wa.me/17039459082?text=" + message;
+
       window.location.href = url;
-    });
+    }
   </script>
+
 </body>
 </html>
